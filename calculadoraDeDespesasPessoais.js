@@ -15,19 +15,23 @@ do {
    ));
 
    switch(menu){
+		   
     case "1":
-        const tipo = prompt("Digite o tipo da despesa (Alimentação, Transporte, Energia, Água):"); 
+       const tipo = prompt("Digite o tipo da despesa (Alimentação, Transporte, Energia, Água):"); 
         const valor = Number(prompt("Digite o valor da despesa:"));
-
-        if (typeof tipo == "string" || valor > 0) {
+        
+        
+        if ( valor > 0) {
         const despesa = [ tipo, valor ];
         despesas.push(despesa);
         alert("Despesa cadastrada com sucesso!");
         console.log(despesas[0]);
         
-    } else {
+     } else {
         alert("Valor inválido! Por favor, insira um valor positivo.");
-    }
+     }
+   
+        break
         
     case "2":
        
@@ -67,5 +71,6 @@ do {
 
 }  
 } while (menu !== "4");
+
 
 
