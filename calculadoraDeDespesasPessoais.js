@@ -8,7 +8,7 @@ let somatotal = 0;
 do {
   menu =(prompt(
         "Menu:\n" +
-    "1 - Cadastrar nova despesa\n" +    //  \n (quebra de linha)
+    "1 - Cadastrar nova despesa\n" +    
     "2 - Ver resumo\n" +
     "3 - Limpar despesas\n" +
     "4 - Sair"
@@ -16,7 +16,7 @@ do {
 
    switch(menu){
     case "1":
-        const tipo = prompt("Digite o tipo da despesa (Alimentação, Transporte, Energia, Água):"); // está aceitando num (tentar concertar)
+        const tipo = prompt("Digite o tipo da despesa (Alimentação, Transporte, Energia, Água):"); 
         const valor = Number(prompt("Digite o valor da despesa:"));
 
         if (typeof tipo == "string" || valor > 0) {
@@ -37,7 +37,7 @@ do {
             console.log(despesas[0][0], despesas[0][1])
         somatotal = 0;
        
-        for (let i = 0; i < despesas.length; i++) {  // desc quantidade
+        for (let i = 0; i < despesas.length; i++) {  
          
           somatotal += despesas[i][1];
         }
@@ -46,7 +46,7 @@ do {
 
         const media = somatotal / despesas.length;
 
-            console.log("Valor médio gasto é R$:", media.toFixed(2));  // duas casas decimais
+            console.log("Valor médio gasto é R$:", media.toFixed(2));  
 }
       break;
 
@@ -67,4 +67,5 @@ do {
 
 }  
 } while (menu !== "4");
+
 
