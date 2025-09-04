@@ -1,5 +1,3 @@
-// Calculadora de Despesas Pessoais
-
 let menu = "";
 let despesas = []
 let somatotal = 0;
@@ -8,7 +6,7 @@ let somatotal = 0;
 do {
   menu =(prompt(
         "Menu:\n" +
-    "1 - Cadastrar nova despesa\n" +    //  \n (quebra de linha)
+    "1 - Cadastrar nova despesa\n" +   
     "2 - Ver resumo\n" +
     "3 - Limpar despesas\n" +
     "4 - Sair"
@@ -44,7 +42,7 @@ do {
             console.log(despesas[0][0], despesas[0][1])
         somatotal = 0;
        
-        for (let i = 0; i < despesas.length; i++) {  // desc quantidade
+        for (let i = 0; i < despesas.length; i++) {  e
          
           somatotal += despesas[i][1];
         }
@@ -53,7 +51,7 @@ do {
 
         const media = somatotal / despesas.length;
 
-            console.log("Valor médio gasto é R$:", media.toFixed(2));  // duas casas decimais
+            console.log("Valor médio gasto é R$:", media.toFixed(2));  
 }
       break;
 
@@ -74,6 +72,7 @@ do {
 
 }  
 } while (menu !== "4");
+
 
 
 
