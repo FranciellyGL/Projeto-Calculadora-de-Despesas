@@ -8,31 +8,34 @@ let somatotal = 0;
 do {
   menu =(prompt(
         "Menu:\n" +
-    "1 - Cadastrar nova despesa\n" +    
+    "1 - Cadastrar nova despesa\n" +    //  \n (quebra de linha)
     "2 - Ver resumo\n" +
     "3 - Limpar despesas\n" +
     "4 - Sair"
    ));
 
    switch(menu){
-		   
     case "1":
-       const tipo = prompt("Digite o tipo da despesa (Alimentação, Transporte, Energia, Água):"); 
+        const tipo = prompt("Digite o tipo da despesa (Alimentação, Transporte, Energia, Água):"); 
         const valor = Number(prompt("Digite o valor da despesa:"));
         
         
         if ( valor > 0) {
-        const despesa = [ tipo, valor ];
-        despesas.push(despesa);
-        alert("Despesa cadastrada com sucesso!");
-        console.log(despesas[0]);
+            const despesa = [ tipo, valor ];
+            despesas.push(despesa);
+            alert("Despesa cadastrada com sucesso!");
+         
+            for (let i = 0; i < despesas.length; i++) {
+                 console.log("Despesa tal " + despesas[i][0] +  " gasto tal " + despesas[i][1]);   
+            }
+            
         
-     } else {
+    } else {
         alert("Valor inválido! Por favor, insira um valor positivo.");
-     }
+    }
    
         break
-        
+
     case "2":
        
         if (despesas.length === 0) {
@@ -41,7 +44,7 @@ do {
             console.log(despesas[0][0], despesas[0][1])
         somatotal = 0;
        
-        for (let i = 0; i < despesas.length; i++) {  
+        for (let i = 0; i < despesas.length; i++) {  // desc quantidade
          
           somatotal += despesas[i][1];
         }
@@ -50,7 +53,7 @@ do {
 
         const media = somatotal / despesas.length;
 
-            console.log("Valor médio gasto é R$:", media.toFixed(2));  
+            console.log("Valor médio gasto é R$:", media.toFixed(2));  // duas casas decimais
 }
       break;
 
@@ -71,6 +74,7 @@ do {
 
 }  
 } while (menu !== "4");
+
 
 
 
